@@ -112,9 +112,13 @@
       <workItem from="1581852558000" duration="14895000" />
       <workItem from="1582489804321" duration="50000" />
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       <workItem from="1582700958412" duration="784000" />
 =======
       <workItem from="1582701083149" duration="8917000" />
+>>>>>>> Stashed changes
+=======
+      <workItem from="1582700958412" duration="6920000" />
 >>>>>>> Stashed changes
     </task>
     <servers />
@@ -152,6 +156,7 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="422" y="100" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1581865432079" />
+<<<<<<< Updated upstream
     <state width="1877" height="295" key="GridCell.Tab.0.bottom" timestamp="1582714224124">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -172,6 +177,28 @@
     </state>
     <state width="1237" height="266" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1581869350247" />
 <<<<<<< Updated upstream
+=======
+    <state width="1877" height="295" key="GridCell.Tab.0.bottom" timestamp="1582711192192">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1237" height="266" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1581869350247" />
+    <state width="1877" height="295" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1582711192192" />
+    <state width="1877" height="295" key="GridCell.Tab.0.center" timestamp="1582711192192">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1237" height="266" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1581869350247" />
+    <state width="1877" height="295" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1582711192192" />
+    <state width="1877" height="295" key="GridCell.Tab.0.left" timestamp="1582711192191">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1237" height="266" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1581869350247" />
+    <state width="1877" height="295" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1582711192191" />
+    <state width="1877" height="295" key="GridCell.Tab.0.right" timestamp="1582711192192">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1237" height="266" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1581869350247" />
+    <state width="1877" height="295" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1582711192192" />
+>>>>>>> Stashed changes
     <state x="461" y="182" key="SettingsEditor" timestamp="1582701081740">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -181,6 +208,7 @@
     </state>
     <state x="351" y="169" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1582489803750" />
     <state x="527" y="268" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1582700958576" />
+<<<<<<< Updated upstream
 =======
     <state width="1877" height="295" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1582714224124" />
     <state x="527" y="268" key="com.intellij.ide.util.TipDialog" timestamp="1582701086140">
@@ -193,6 +221,12 @@
     </state>
     <state x="656" y="138" width="607" height="804" key="find.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1582713589780" />
 >>>>>>> Stashed changes
+=======
+    <state x="656" y="138" width="607" height="804" key="find.popup" timestamp="1582709198002">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="656" y="138" width="607" height="804" key="find.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1582709198002" />
+>>>>>>> Stashed changes
     <state width="300" height="120" key="javadoc.popup.new" timestamp="1581868634597">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -201,6 +235,7 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="75" y="50" key="new project wizard/0.0.1280.680@0.0.1280.680" timestamp="1581688763312" />
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
     <state x="623" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1582701079356">
       <screen x="0" y="0" width="1920" height="1080" />
@@ -211,6 +246,12 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="623" y="235" width="672" height="678" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1582711249551" />
+>>>>>>> Stashed changes
+=======
+    <state x="623" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1582709685345">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="623" y="235" width="672" height="678" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1582709685345" />
 >>>>>>> Stashed changes
   </component>
   <component name="simpleUML.UMLToolWindowPlugin">
