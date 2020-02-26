@@ -1,6 +1,6 @@
 package pizzashop.service;
 
-import pizzashop.model.MenuDataModel;
+import pizzashop.model.MenuItem;
 import pizzashop.model.Payment;
 import pizzashop.model.PaymentType;
 import pizzashop.repository.MenuRepository;
@@ -8,17 +8,17 @@ import pizzashop.repository.PaymentRepository;
 
 import java.util.List;
 
-public class PizzaService {
+public class MainService {
 
     private MenuRepository menuRepo;
     private PaymentRepository payRepo;
 
-    public PizzaService(MenuRepository menuRepo, PaymentRepository payRepo){
+    public MainService(MenuRepository menuRepo, PaymentRepository payRepo){
         this.menuRepo=menuRepo;
         this.payRepo=payRepo;
     }
 
-    public List<MenuDataModel> getMenuData(){return menuRepo.getMenu();}
+    public List<MenuItem> getMenuData(){return menuRepo.getMenu();}
 
     public List<Payment> getPayments(){return payRepo.getAll(); }
 
@@ -29,9 +29,9 @@ public class PizzaService {
 
     public double getTotalAmount(PaymentType type){
         double total=0.0f;
-        List<Payment> l=getPayments();
-        if ((l==null) ||(l.size()==0)) return total;
-        for (Payment p:l){
+        List<Payment> paymentList=getPayments();
+        if ((paymentList==null) ||(paymentList.size()==0)) return total;
+        for (Payment p:paymentList){
             if (p.getType().equals(type))
                 total+=p.getAmount();
         }
