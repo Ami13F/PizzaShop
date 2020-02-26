@@ -30,7 +30,7 @@ public class MainService {
     public double getTotalAmount(PaymentType type){
         double total=0.0f;
         List<Payment> paymentList=getPayments();
-        if ((paymentList==null) ||(paymentList.size()==0)) return total;
+        if ((paymentList==null) ||(paymentList.isEmpty())) return total;
         for (Payment p:paymentList){
             if (p.getType().equals(type))
                 total+=p.getAmount();

@@ -7,6 +7,8 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class PaymentRepository {
     private static String filename = "data/payments.txt";
@@ -20,19 +22,14 @@ public class PaymentRepository {
     private void readPayments(){
         ClassLoader classLoader = PaymentRepository.class.getClassLoader();
         File file = new File(classLoader.getResource(filename).getFile());
-        BufferedReader br = null;
-        try {
-            br = new BufferedReader(new FileReader(file));
+        try (BufferedReader br = new BufferedReader(new FileReader(file))){
             String line = null;
             while((line=br.readLine())!=null){
                 Payment payment=getPayment(line);
                 paymentList.add(payment);
             }
-            br.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
-            e.printStackTrace();
+            Logger.getLogger(this.getClass().getName()).log(Level.ALL, e.getMessage());
         }
     }
 
@@ -43,7 +40,7 @@ public class PaymentRepository {
         int tableNumber= Integer.parseInt(st.nextToken());
         String type= st.nextToken();
         double amount = Double.parseDouble(st.nextToken());
-        item = new Payment(tableNumber, PaymentType.valueOf(type), amount);
+        item = new Payment(tableNumber, PaymentType.valueOf(type.toUpperCase()), amount);
         return item;
     }
 
@@ -60,17 +57,16 @@ public class PaymentRepository {
         ClassLoader classLoader = PaymentRepository.class.getClassLoader();
         File file = new File(classLoader.getResource(filename).getFile());
 
-        BufferedWriter bw = null;
-        try {
-            bw = new BufferedWriter(new FileWriter(file));
+
+        try(BufferedWriter bw = new BufferedWriter(new FileWriter(file));) {
             for (Payment p:paymentList) {
-                System.out.println(p.toString());
+                String product = p.toString();
+                Logger.getLogger(this.getClass().getName()).log(Level.ALL, product);
                 bw.write(p.toString());
                 bw.newLine();
             }
-            bw.close();
         } catch (IOException e) {
-            e.printStackTrace();
+            Logger.getLogger(this.getClass().getName()).log(Level.ALL, e.getMessage());
         }
     }
 

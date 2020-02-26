@@ -6,21 +6,18 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class MenuRepository {
     private static String filename = "data/menu.txt";
     private List<MenuItem> listMenu;
 
-    public MenuRepository(){
-    }
-
     private void readMenu(){
         ClassLoader classLoader = MenuRepository.class.getClassLoader();
         File file = new File(classLoader.getResource(filename).getFile());
         this.listMenu= new ArrayList();
-        BufferedReader br = null;
-        try {
-            br = new BufferedReader(new FileReader(file));
+        try (BufferedReader br = new BufferedReader(new FileReader(file))){
             String line = null;
             while((line=br.readLine())!=null){
                 if(!line.equals("")) {
@@ -28,11 +25,8 @@ public class MenuRepository {
                     listMenu.add(menuItem);
                 }
             }
-            br.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
-            e.printStackTrace();
+            Logger.getLogger(this.getClass().getName()).log(Level.ALL, e.getMessage());
         }
     }
 
@@ -44,7 +38,7 @@ public class MenuRepository {
         try {
             price = Double.parseDouble(st.nextToken());
         } catch (NumberFormatException ex){
-            System.out.println("Price could not be converted");
+            Logger.getLogger(this.getClass().getName()).log(Level.ALL, "Price could not be converted");
             return null;
         }
         item = new MenuItem(name, 0, price);

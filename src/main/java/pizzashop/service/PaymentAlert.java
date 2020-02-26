@@ -5,6 +5,8 @@ import javafx.scene.control.ButtonType;
 import pizzashop.model.PaymentType;
 
 import java.util.Optional;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class PaymentAlert implements PaymentOperation {
     private MainService service;
@@ -15,23 +17,17 @@ public class PaymentAlert implements PaymentOperation {
 
     @Override
     public void cardPayment() {
-        System.out.println("--------------------------");
-        System.out.println("Paying by card...");
-        System.out.println("Please insert your card!");
-        System.out.println("--------------------------");
+        Logger.getLogger(this.getClass().getName()).log(Level.ALL, "Paying by card...");
+        Logger.getLogger(this.getClass().getName()).log(Level.ALL, "Please insert your card!");
     }
     @Override
     public void cashPayment() {
-        System.out.println("--------------------------");
-        System.out.println("Paying cash...");
-        System.out.println("Please show the cash...!");
-        System.out.println("--------------------------");
+        Logger.getLogger(this.getClass().getName()).log(Level.ALL, "Paying cash...");
+        Logger.getLogger(this.getClass().getName()).log(Level.ALL, "Please show the cash...!");
     }
     @Override
     public void cancelPayment() {
-        System.out.println("--------------------------");
-        System.out.println("Payment choice needed...");
-        System.out.println("--------------------------");
+        Logger.getLogger(this.getClass().getName()).log(Level.ALL, "Payment choice needed...");
     }
       public void showPaymentAlert(int tableNumber, double totalAmount ) {
         Alert paymentAlert = new Alert(Alert.AlertType.CONFIRMATION);
@@ -43,13 +39,13 @@ public class PaymentAlert implements PaymentOperation {
         ButtonType cancel = new ButtonType("Cancel");
         paymentAlert.getButtonTypes().setAll(cardPayment, cashPayment, cancel);
         Optional<ButtonType> result = paymentAlert.showAndWait();
-        if (result.get() == cardPayment) {
+        if (result.isPresent() && result.get() == cardPayment) {
             cardPayment();
-            service.addPayment(tableNumber, PaymentType.Card,totalAmount);
-        } else if (result.get() == cashPayment) {
+            service.addPayment(tableNumber, PaymentType.CARD,totalAmount);
+        } else if (result.isPresent() && result.get() == cashPayment) {
             cashPayment();
-            service.addPayment(tableNumber, PaymentType.Cash,totalAmount);
-        } else if (result.get() == cancel) {
+            service.addPayment(tableNumber, PaymentType.CASH,totalAmount);
+        } else if (result.isPresent() && result.get() == cancel) {
              cancelPayment();
         } else {
             cancelPayment();

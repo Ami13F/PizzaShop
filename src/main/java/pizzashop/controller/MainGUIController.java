@@ -44,8 +44,6 @@ public class MainGUIController  {
 
     MainService service;
 
-    public MainGUIController(){}
-
     public void setService(MainService service){
         this.service=service;
         tableHandlers();

@@ -1,15 +1,17 @@
 package pizzashop.gui;
 
-import javafx.event.EventHandler;
+import javafx.event.Event;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import javafx.stage.WindowEvent;
 import pizzashop.controller.OrdersGUIController;
 import pizzashop.service.MainService;
 
+
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 public class OrdersGUI {
@@ -25,27 +27,19 @@ public class OrdersGUI {
      VBox vBoxOrders = null;
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/OrdersGUIFXML.fxml"));
-
-            //vBoxOrders = FXMLLoader.load(getClass().getResource("/fxml/OrdersGUIFXML.fxml"));
             vBoxOrders = loader.load();
             OrdersGUIController ordersCtrl= loader.getController();
             ordersCtrl.setService(service, tableNumber);
 
         } catch (IOException e) {
-            e.printStackTrace();
+            Logger.getLogger(this.getClass().getName()).log(Level.ALL, e.getMessage());
         }
 
      Stage stage = new Stage();
      stage.setTitle("Table"+getTableNumber()+" order form");
      stage.setResizable(false);
      // disable X on the window
-     stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
-      @Override
-     public void handle(WindowEvent event) {
-         // consume event
-         event.consume();
-            }
-        });
+     stage.setOnCloseRequest(Event::consume);
      stage.setScene(new Scene(vBoxOrders));
      stage.show();
     }
