@@ -44,6 +44,7 @@ public class PaymentRepository {
         return item;
     }
 
+    //TODO: test this
     public void add(Payment payment){
         paymentList.add(payment);
         writeAll();
