@@ -44,9 +44,11 @@ public class PaymentRepository {
         return item;
     }
 
-    //TODO: test this
-    public void add(Payment payment){
+    public void addPay(Payment payment){
         paymentList.add(payment);
+    }
+    public void add(Payment payment){
+        this.addPay(payment);
         writeAll();
     }
 
