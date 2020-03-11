@@ -1,25 +1,26 @@
 package pizzashop.repository;
 
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
+import pizzashop.model.Payment;
+import pizzashop.model.PaymentType;
 
 class PaymentRepositoryTest {
-
-    PaymentRepository paymentRepository ;
+    private static PaymentRepository paymentRepository;
 
     @BeforeAll
-    public static void init(){
-        paymentRepository = new PaymentRepository();
+    static void init(){
+        PaymentRepositoryTest.paymentRepository =
+                new PaymentRepository("/data/pay_test.csv");
     }
 
     @Test
     void addPay() {
 
     }
+
     @Test
     void addPay_TC2_BVA(){
-        Payment payment = new  Payment(7,PaymentType.CASH,43.20);
-
+        Payment payment = new Payment(7, PaymentType.CASH,43.20);
     }
 }
