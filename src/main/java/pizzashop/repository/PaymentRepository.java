@@ -11,12 +11,18 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class PaymentRepository {
-    private static String filename = "data/payments.txt";
+    private String filename = "data/payments.txt";
     private List<Payment> paymentList;
 
     public PaymentRepository(){
         this.paymentList = new ArrayList<>();
+        this.filename = "data/payments.txt";
         readPayments();
+    }
+
+    public PaymentRepository(final String filename){
+        this.paymentList = new ArrayList<>();
+        this.filename = filename;
     }
 
     private void readPayments(){
