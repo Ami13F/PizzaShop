@@ -2,7 +2,9 @@ package pizzashop.repository;
 
 import pizzashop.model.Payment;
 import pizzashop.model.PaymentType;
+import pizzashop.validator.PaymentValidator;
 
+import javax.xml.bind.ValidationException;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -51,7 +53,8 @@ public class PaymentRepository {
         return item;
     }
 
-    public void addPay(Payment payment){
+    public void addPay(Payment payment) {
+        PaymentValidator.validate(payment);
         paymentList.add(payment);
     }
     public void add(Payment payment){

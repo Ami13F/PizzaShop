@@ -23,8 +23,6 @@ class PaymentRepositoryTest {
     @Test
     void addPay_TC1_ECP() {
         final Payment payment = new Payment(1, PaymentType.CARD,13.97);
-        System.out.println(paymentRepository.getAll().size());
-        paymentRepository.getAll().forEach(System.out::println);
         int count = paymentRepository.getAll().size();
         paymentRepository.addPay(payment);
         Assertions.assertEquals(paymentRepository.getAll().size(), count + 1);
