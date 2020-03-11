@@ -33,6 +33,7 @@ public class PaymentRepository {
             while((line=br.readLine())!=null){
                 Payment payment=getPayment(line);
                 paymentList.add(payment);
+                System.out.println(payment);
             }
         } catch (IOException e) {
             Logger.getLogger(this.getClass().getName()).log(Level.ALL, e.getMessage());
