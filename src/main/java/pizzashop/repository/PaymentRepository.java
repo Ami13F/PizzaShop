@@ -66,8 +66,14 @@ public class PaymentRepository {
         return paymentList;
     }
 
+    public void clear(){
+        paymentList = new ArrayList<>();
+    }
+
     public void writeAll(){
         ClassLoader classLoader = PaymentRepository.class.getClassLoader();
+        if(classLoader.getResource(filename) == null)
+            return;
         File file = new File(classLoader.getResource(filename).getFile());
 
 

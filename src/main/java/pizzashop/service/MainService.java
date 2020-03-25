@@ -27,13 +27,25 @@ public class MainService {
         payRepo.add(payment);
     }
 
+    public void clear(){
+        payRepo.clear();
+    }
+
+    /**
+     * Compute total amount for payment type.
+     * @param type CASH or CARD
+     * @return total
+     */
     public double getTotalAmount(PaymentType type){
         double total=0.0f;
         List<Payment> paymentList=getPayments();
-        if (paymentList == null)
-            return total;
-        if (paymentList.isEmpty())
-            return total;
+        if (paymentList.size() == 1){
+            Payment p = paymentList.get(0);
+            if(p.getType().equals(type))
+                return p.getAmount();
+            else return total;
+        }
+
         for (Payment p:paymentList){
             if (p.getType().equals(type))
                 total+=p.getAmount();
