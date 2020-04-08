@@ -17,6 +17,10 @@ public class MenuRepository implements IMenuRepository{
         readMenu();
     }
 
+    public MenuRepository(String filename){
+        listMenu = new ArrayList<>();
+    }
+
     private void readMenu(){
         ClassLoader classLoader = MenuRepository.class.getClassLoader();
         File file = new File(classLoader.getResource(filename).getFile());
