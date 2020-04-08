@@ -12,7 +12,7 @@ import java.util.StringTokenizer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class PaymentRepository {
+public class PaymentRepository implements IPaymentRepository{
     private String filename = "data/payments.txt";
     private List<Payment> paymentList;
 
@@ -53,23 +53,29 @@ public class PaymentRepository {
         return item;
     }
 
+    @Override
     public void addPay(Payment payment) {
         PaymentValidator.validate(payment);
         paymentList.add(payment);
     }
+
+    @Override
     public void add(Payment payment){
         this.addPay(payment);
         writeAll();
     }
 
+    @Override
     public List<Payment> getAll(){
         return paymentList;
     }
 
+    @Override
     public void clear(){
         paymentList = new ArrayList<>();
     }
 
+    @Override
     public void writeAll(){
         ClassLoader classLoader = PaymentRepository.class.getClassLoader();
         if(classLoader.getResource(filename) == null)

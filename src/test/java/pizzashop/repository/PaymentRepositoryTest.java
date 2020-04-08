@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit;
 
 class PaymentRepositoryTest {
 
-    private static PaymentRepository paymentRepository;
+    private static IPaymentRepository paymentRepository;
 
     @BeforeAll
     static void init(){

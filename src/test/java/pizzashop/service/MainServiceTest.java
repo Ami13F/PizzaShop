@@ -2,13 +2,15 @@ package pizzashop.service;
 
 import org.junit.jupiter.api.*;
 import pizzashop.model.PaymentType;
+import pizzashop.repository.IMenuRepository;
+import pizzashop.repository.IPaymentRepository;
 import pizzashop.repository.MenuRepository;
 import pizzashop.repository.PaymentRepository;
 
 class MainServiceTest {
 
-    private static MenuRepository menuRepo = null;
-    private static PaymentRepository paymentRepository;
+    private static IMenuRepository menuRepo = null;
+    private static IPaymentRepository paymentRepository;
 
     private static MainService mainService;
     @BeforeAll
