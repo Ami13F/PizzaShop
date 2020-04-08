@@ -13,6 +13,10 @@ public class MenuRepository implements IMenuRepository{
     private static String filename = "data/menu.txt";
     private List<MenuItem> listMenu;
 
+    public MenuRepository(){
+        readMenu();
+    }
+
     private void readMenu(){
         ClassLoader classLoader = MenuRepository.class.getClassLoader();
         File file = new File(classLoader.getResource(filename).getFile());
@@ -46,8 +50,12 @@ public class MenuRepository implements IMenuRepository{
     }
 
     @Override
+    public void addMenu(MenuItem item){
+        listMenu.add(item);
+    }
+
+    @Override
     public List<MenuItem> getMenu(){
-        readMenu();//create a new menu for each table, on request
         return listMenu;
     }
 
