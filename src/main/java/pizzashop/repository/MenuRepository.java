@@ -50,7 +50,7 @@ public class MenuRepository implements IMenuRepository{
     }
 
     @Override
-    public void addMenu(MenuItem item){
+    public void addMenuItem(MenuItem item){
         listMenu.add(item);
     }
 
