@@ -9,12 +9,14 @@ import pizzashop.repository.PaymentRepository;
 
 class MainServiceTest {
 
-    private static IMenuRepository menuRepo = null;
+    private static IMenuRepository menuRepo;
     private static IPaymentRepository paymentRepository;
 
     private static MainService mainService;
     @BeforeAll
     static void init(){
+        MainServiceTest.menuRepo =
+                new MenuRepository("/data/menu_test.csv");
         MainServiceTest.paymentRepository =
                 new PaymentRepository("/data/pay_test.csv");
         MainServiceTest.mainService = new MainService(menuRepo, paymentRepository);

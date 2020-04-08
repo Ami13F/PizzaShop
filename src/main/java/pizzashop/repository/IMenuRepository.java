@@ -7,4 +7,5 @@ import java.util.List;
 public interface IMenuRepository {
     List<MenuItem> getMenu();
     void addMenuItem(MenuItem item);
+    void clear();
 }

@@ -26,4 +26,9 @@ public class MenuRepositoryMock implements IMenuRepository {
     public void addMenuItem(MenuItem item) {
 
     }
+
+    @Override
+    public void clear() {
+
+    }
 }

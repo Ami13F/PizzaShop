@@ -59,6 +59,11 @@ public class MenuRepository implements IMenuRepository{
     }
 
     @Override
+    public void clear() {
+        listMenu = new ArrayList<>();
+    }
+
+    @Override
     public List<MenuItem> getMenu(){
         return listMenu;
     }

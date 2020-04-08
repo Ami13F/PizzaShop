@@ -31,6 +31,7 @@ public class MainService {
 
     public void clear(){
         payRepo.clear();
+        menuRepo.clear();
     }
 
     /**
